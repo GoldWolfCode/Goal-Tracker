@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancing Goal Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #444;
+        }
+        .goal-section {
+            margin: 20px 0;
+        }
+        .goal-section h3 {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        .goal-list {
+            list-style: none;
+            padding: 0;
+        }
+        .goal-list li {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .goal-list li span {
+            font-weight: bold;
+        }
+        .goal-list li button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .goal-list li button:hover {
+            background-color: #218838;
+        }
+        .goal-list li.completed {
+            text-decoration: line-through;
+            color: #aaa;
+            background-color: #e9ecef;
+        }
+        .goal-list li.completed button {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Freelancing Goal Tracker</h1>
+
+        <div class="goal-section">
+            <h2>Weekly Goals</h2>
+            <ul class="goal-list" id="weeklyGoals">
+                <li><span>Define your niche and services</span> <button onclick="markAsCompleted(this)">Complete</button></li>
+                <li><span>Create a portfolio website</span> <button onclick="markAsCompleted(this)">Complete</button></li>
+                <li><span>Build one portfolio project</span> <button onclick="markAsCompleted(this)">Complete</button></li>
+            </ul>
+        </div>
+
+        <div class="goal-section">
+            <h2>Monthly Goals</h2>
+            <ul class="goal-list" id="monthlyGoals">
+                <li><span>Complete two portfolio projects</span> <button onclick="markAsCompleted(this)">Complete</button></li>
+                <li><span>Secure your first client</span> <button onclick="markAsCompleted(this)">Complete</button></li>
+                <li><span>Establish online presence</span> <button onclick="markAsCompleted(this)">Complete</button></li>
+            </ul>
+        </div>
+
+        <div class="goal-section">
+            <h2>Yearly Goals</h2>
+            <ul class="goal-list" id="yearlyGoals">
+                <li><span>Achieve consistent $1,000/month freelancing income</span> <button onclick="markAsCompleted(this)">Complete</button></li>
+                <li><span>Develop expertise in one advanced skill</span> <button onclick="markAsCompleted(this)">Complete</button></li>
+                <li><span>Build a professional portfolio with at least 5 projects</span> <button onclick="markAsCompleted(this)">Complete</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function markAsCompleted(button) {
+            const listItem = button.parentElement;
+            listItem.classList.add('completed');
+            button.textContent = 'Completed';
+            button.disabled = true;
+        }
+    </script>
+</body>
+</html>
